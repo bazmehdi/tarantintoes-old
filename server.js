@@ -27,7 +27,7 @@ con.connect(function(error){
 });
 
 app.get('/shot', (req, res) => {
-    con.query('SELECT movies.title, shots.shot_path, shots.timestamp FROM movies, shots WHERE movies.id = ?', 1 , function(error, rows, fields){
+    con.query('SELECT movies.title, shots.shot_path, shots.timestamp FROM movies, shots WHERE movies.id = shots.movie_id ORDER BY RAND ( ) LIMIT 1', function(error, rows, fields){
         if(error) throw error;
 
         else {

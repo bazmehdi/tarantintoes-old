@@ -10,9 +10,6 @@ header {
     z-index: 99;
 
     div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         max-width: 1366px;
         margin-left: auto;
         margin-right: auto;
@@ -21,8 +18,8 @@ header {
 
     .logo {
         font-size: 2em;
-        width: 375px;
-        margin: 1.5em 0px 1.5em 1em;
+        margin: 1.5em 0px 1.5em 0em;
+        text-align: center;
 
         a {
             text-decoration: none;

@@ -11,13 +11,13 @@ class Header extends Component {
                     <NavLink to="/">LOGO</NavLink>
                 </div>
                 
-                <nav>
+                {/*<nav>
                     <ul>
                         <li><NavLink to="/#" activeClassName="selected">ABOUT</NavLink></li>
                         <li><NavLink to="/#" activeClassName="selected">DONATE</NavLink></li>
                         <li><NavLink to="/#" activeClassName="selected">CONTACT</NavLink></li>
                     </ul>
-                </nav>
+                </nav>*/}
             </div>
         </header>
     );

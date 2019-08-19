@@ -17,7 +17,7 @@ class Home extends Component {
 
   render() {
     return (
-        <div>
+        <div className="wrapper">
         {this.state.shot.map(data =>
             <div key={data.id} id={data.image_id} className="box" style={{backgroundImage: 'url(../../../images/' + data.shot_path + ')'}}>
               <div className="overlay"></div>
