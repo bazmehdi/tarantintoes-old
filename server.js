@@ -17,7 +17,7 @@ const con = mysql.createConnection({
 
 });
 
-const port = 6000;
+const port = 5000;
 
 app.listen(port, () => console.log('Server started on ' + port));
 
@@ -26,8 +26,8 @@ con.connect(function(error){
     else console.log("Database connected");
 });
 
-app.get('/', (req, res) => {
-    con.query('SELECT * FROM images ORDER BY image_id ASC', function(error, rows, fields){
+app.get('/shot', (req, res) => {
+    con.query('SELECT movies.title, shots.shot_path, shots.timestamp FROM movies, shots WHERE movies.id = ?', 1 , function(error, rows, fields){
         if(error) throw error;
 
         else {
