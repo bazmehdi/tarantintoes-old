@@ -22,9 +22,9 @@ class Home extends Component {
           <div>
             <div key={data.id} id={data.image_id} className="box" style={{backgroundImage: 'url(../../../images/' + data.shot_path + ')'}}>
               <div className="overlay"></div>
-              <h3 className="desktop">{data.title} | {data.timestamp}</h3>
+              <h3 className="desktop">{data.title} ({data.rel_date}) | {data.timestamp} </h3>
             </div>
-            <h3 className="mobile">{data.title} | {data.timestamp}</h3>
+            <h3 className="mobile">{data.title} ({data.rel_date}) | {data.timestamp}</h3>
           </div>
         )}
         </div>
