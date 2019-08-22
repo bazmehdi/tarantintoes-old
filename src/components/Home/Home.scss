@@ -25,7 +25,7 @@
                 @include transition(0.25s);
             }
 
-            h3 {
+            .desktop {
                 visibility: visible;
             }
         }
@@ -43,7 +43,7 @@
             @include transition(0.1s);
         }
 
-        h3 {
+        .desktop {
             position:absolute;
             width:100%;
             bottom:0;
@@ -52,5 +52,9 @@
             visibility: hidden;
             color: #ffffff
         }
+    }
+
+    .mobile {
+        display: none;
     }
 }
