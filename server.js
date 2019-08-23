@@ -37,6 +37,17 @@ app.get('/shot', (req, res) => {
     });
 });
 
+app.get('/grid', (req, res) => {
+    con.query('SELECT movies.title, movies.rel_date, movies.poster_path FROM movies ORDER BY id ASC', function(error, rows, fields){
+        if(error) throw error;
+
+        else {
+            console.log(rows);
+            res.send(rows);
+        }
+    });
+});
+
 /*
 app.get('/name', (req, res) => {
     con.query('SELECT * FROM pages_data', function(error, rows, fields){
