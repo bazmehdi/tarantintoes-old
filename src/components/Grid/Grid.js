@@ -10,9 +10,9 @@ class Grid extends Component {
   }
 
   handleClick(e) {
-    const pageId = e.currentTarget.id
-    console.log(pageId + ' clicked');
-    this.props.history.push('/' + pageId, {id: pageId});
+    const movieId = e.currentTarget.id
+    console.log(movieId + ' clicked');
+    this.props.history.push('/' + movieId, {id: movieId});
   }
 
   componentDidMount() {

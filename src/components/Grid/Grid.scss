@@ -8,6 +8,9 @@
 	grid-auto-rows: minmax(200px, auto);
 	text-align: center;
 	padding: 2em 1em 2em 1em;
+	position: absolute;
+	left: 50%;
+    transform: translate( -50%);
 
 	/*Box*/
 	.box {

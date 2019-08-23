@@ -38,7 +38,25 @@ app.get('/shot', (req, res) => {
 });
 
 app.get('/grid', (req, res) => {
-    con.query('SELECT movies.title, movies.rel_date, movies.poster_path FROM movies ORDER BY id ASC', function(error, rows, fields){
+    con.query('SELECT movies.title, movies.rel_date, movies.poster_path, movies.id FROM movies ORDER BY id ASC', function(error, rows, fields){
+        if(error) throw error;
+
+        else {
+            console.log(rows);
+            res.send(rows);
+        }
+    });
+});
+
+app.get('/:id', (req, res) => {
+
+    let movie_id = req.params.id;
+
+    if (!movie_id) {
+        return res.status(400).send({ error: true, message: 'Please provide movie_id' });
+    }
+
+    con.query('SELECT movies.title, movies.rel_date, shots.shot_path, shots.timestamp FROM movies, shots WHERE movies.id = shots.movie_id AND shots.movie_id = ?', movie_id, function(error, rows, fields){
         if(error) throw error;
 
         else {
