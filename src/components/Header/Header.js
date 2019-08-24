@@ -3,11 +3,31 @@ import { NavLink } from 'react-router-dom'
 import './Header.scss';
 
 class Header extends Component {
-  render() {
-    return (
+    /*
+    componentDidMount() {
+        window.addEventListener("scroll", this.resizeHeaderOnScroll);
+        console.log(this.refs.myDiv.getAttribute('class'));
+    }
+    
+    resizeHeaderOnScroll() {
+        console.log(this.refs.myDiv.getAttribute('class'));
+        const distanceY = window.pageYOffset || document.documentElement.scrollTop,
+          shrinkOn = 200,
+          logoEl = this.refs.myDiv.getAttribute('class');
+    
+        if (distanceY > shrinkOn) {
+          logoEl.classList.add("smaller");
+        } else {
+          logoEl.classList.remove("smaller");
+        }
+    }
+    */
+
+    render() {
+        return (
         <header>
             <div>
-                <div className="logo">
+                <div className="logo" ref="myDiv">
                     <NavLink to="/">LOGO</NavLink>
                 </div>
                 
@@ -20,8 +40,8 @@ class Header extends Component {
                 </nav>*/}
             </div>
         </header>
-    );
-  }
+        );
+    }
 }
 
 export default Header;
