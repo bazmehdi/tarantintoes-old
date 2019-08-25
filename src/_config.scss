@@ -2,7 +2,13 @@
 
 $black: #131313;
 $white: #fcfcfc;
+$mainfont: 'Open Sans', sans_serif;
+$headerfont: 'Aachen';
 
+
+p, h2, h3, a {
+    font-family: $mainfont;
+}
 
 .body {
     max-width: 1366px;
