@@ -1,6 +1,19 @@
 @import "../../_config.scss";
 
 /*Grid*/
+.movie-details{
+	text-align: center;
+	
+	h3 {
+		font-size: 2em;
+		font-weight: 900;
+		position: relative;
+		z-index: 3;
+		text-transform: uppercase;
+		color: $white;
+	}
+}
+
 .movie-wrapper {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
@@ -12,8 +25,8 @@
 	/*Box*/
 	.movie-box {
 		position:relative;
-		background-size: cover !important;
-		background-position: center !important;
+		background-size: cover;
+		background-position: center;
 		@include transition(0.1s);
 		z-index: 1;
 		display: flex;
@@ -59,21 +72,63 @@
 }
 
 
-/*TABLET*/
-@media screen and (max-width: 1024px) {
+/*TABLET1*/
+@media screen and (max-width: 1402px) {
 	main {
 		margin-top: 0;
 	}
 	
-	.wrapper {
+	.movie-wrapper {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.movie-details{
+		h3 {
+			font-size: 1.5em;
+		}
+	}
+}
+
+/*TABLET2*/
+@media screen and (max-width: 1024px) {
+	.movie-wrapper {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
-
-/*MOBILE*/
-@media screen and (max-width: 400px) {
-	.wrapper {
+/*MOBILE1*/
+@media screen and (max-width: 700px) {
+	.movie-wrapper {
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.movie-details{
+		h3 {
+			font-size: 1em;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+/*MOBILE2*/
+@media screen and (max-width: 600px) {
+	.movie-wrapper {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.movie-details{
+		h3 {
+			font-size: 1em;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+/*MOBILE3*/
+@media screen and (max-width: 400px) {
+	.movie-details{
+		h3 {
+			margin-bottom: 10px;
+		}
 	}
 }

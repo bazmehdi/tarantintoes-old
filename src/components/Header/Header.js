@@ -28,16 +28,8 @@ class Header extends Component {
         <header>
             <div>
                 <div className="logo" ref="myDiv">
-                    <NavLink to="/">LOGO</NavLink>
+                    <NavLink to="/">TARANTINTOES</NavLink>
                 </div>
-                
-                {/*<nav>
-                    <ul>
-                        <li><NavLink to="/#" activeClassName="selected">ABOUT</NavLink></li>
-                        <li><NavLink to="/#" activeClassName="selected">DONATE</NavLink></li>
-                        <li><NavLink to="/#" activeClassName="selected">CONTACT</NavLink></li>
-                    </ul>
-                </nav>*/}
             </div>
         </header>
         );

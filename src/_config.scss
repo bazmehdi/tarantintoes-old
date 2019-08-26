@@ -2,47 +2,47 @@
 
 $black: #131313;
 $white: #fcfcfc;
-$mainfont: 'Open Sans', sans_serif;
-$headerfont: 'Aachen';
+$purple: #17172e;
+$yellow: #f19001;
+$orange: #fd0b09;
+$mainfont: 'Open Sans', sans-serif;
+$headerfont: 'Titillium Web', sans-serif;
 
 
-p, h2, h3, a {
+p, h2, h3 {
     font-family: $mainfont;
 }
 
 .body {
-    max-width: 1366px;
+    max-width: 1402px;
     margin-top: 9.5em;
 	margin-left: auto;
 	margin-right: auto;
-    font-family: arial;
-    background-color: $white;
     width: 100%;
 }
 
-html {
-    overflow: overlay;
-    
-    /* width */
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-  
-    /* Track */
-    ::-webkit-scrollbar-track {
-        background: $white;
-    }
-   
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 10px;
-    }
-  
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555; 
-    }
+/*TABLET*/
+@media screen and (max-width: 1024px) {
+	.body {
+		max-width: 1024px;
+		margin-top: 7em;
+	}
+}
+
+/*MOBILE1*/
+@media screen and (max-width: 600px) {
+	.body {
+		max-width: 400px;
+		margin-top: 5.5em;
+	}
+}
+
+/*MOBILE2*/
+@media screen and (max-width: 400px) {
+	.body {
+		max-width: 400px;
+		margin-top: 2.5em;
+	}
 }
 
 
@@ -66,4 +66,11 @@ html {
     -webkit-box-shadow: $e;
 	-moz-box-shadow: $e;
 	box-shadow: $e;
+}
+
+@mixin transition-duration($e) {
+    -webkit-transition-duration: -webkit-transform $e;
+	-moz-transition-duration: -moz-transform $e;
+	-ms-transition-duration:  -ms-transform $e;
+	transition-duration:  transform $e;
 }

@@ -11,8 +11,8 @@ class Grid extends Component {
 
   handleClick(e) {
     const movieId = e.currentTarget.id
-    console.log(movieId + ' clicked');
-    this.props.history.push('/' + movieId, {id: movieId});
+    const title = e.currentTarget.textContent
+    this.props.history.push('/' + movieId, {id: movieId, poster: poster, title: title});
   }
 
   componentDidMount() {
@@ -30,6 +30,7 @@ class Grid extends Component {
             <div key={data.id} onClick={e => this.handleClick(e)} id={data.id} className="box" style={{backgroundImage: 'url(../../../images/' + data.poster_path + ')'}}>
               <div className="overlay"></div>
               <h3>{data.title}</h3>
+              <span style={{display: 'none'}}> ({data.rel_date})</span>
             </div>
           )}
           </div>
