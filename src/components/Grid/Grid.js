@@ -12,7 +12,7 @@ class Grid extends Component {
   handleClick(e) {
     const movieId = e.currentTarget.id
     const title = e.currentTarget.textContent
-    this.props.history.push('/' + movieId, {id: movieId, poster: poster, title: title});
+    this.props.history.push('/' + movieId, {id: movieId, title: title});
   }
 
   componentDidMount() {

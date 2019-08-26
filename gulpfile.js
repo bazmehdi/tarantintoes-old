@@ -3,16 +3,13 @@
 // dependencies
 
 var gulp = require('gulp');
-const babel = require('gulp-babel');
-const plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var minifyCSS = require('gulp-clean-css');
-var concat = require('gulp-concat');
-const terser = require('terser');
-const composer = require('gulp-uglify/composer');
-const uglify = composer(terser, console);
+var terser = require('gulp-terser');
+var minify = require('gulp-minify');
 var rename = require('gulp-rename');
 var changed = require('gulp-changed');
+var gutil = require('gulp-util');
 
 
 ///////////////
@@ -47,15 +44,18 @@ gulp.task('watch_scss', function(cb){
 // - JS
 ///////////////
 
-var JS_SRC = ['./server.js','./src/*.js','./src/components/*.js','./src/components/FOLDER_NAME/*.js'];
+var JS_SRC = ['./server.js','./src/*.js','./src/components/*.js','./src/components/FOLDERNAME/*.js'];
 var JS_DEST = './dist/js';
 
 // Compile JS
 gulp.task('compile_js', function(cb){
 
     gulp.src(JS_SRC)
-    .pipe(babel({presets: ['@babel/preset-env']}))
-    .pipe(uglify().on('error', function(e){ console.log(e); }))
+    //.pipe(babel({presets: ['@babel/preset-env']}))
+    .pipe(terser().on('error', function(err) {
+        gutil.log(gutil.colors.red('[Error]'), err.toString());
+        this.emit('end');
+    }))
     .pipe(rename({ suffix: '.min'}))
     .pipe(changed(JS_DEST))
     .pipe(gulp.dest(JS_DEST));
