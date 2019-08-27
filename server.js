@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+//app.use(express.static(path.join(__dirname, 'build')));
+
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 
@@ -25,6 +27,10 @@ con.connect(function(error){
     if(error) console.log(error);
     else console.log("Database connected");
 });
+
+/*app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});*/
 
 app.get('/shot', (req, res) => {
     con.query('SELECT movies.title, movies.rel_date, shots.shot_path, shots.timestamp FROM movies, shots WHERE movies.id = shots.movie_id ORDER BY RAND ( ) LIMIT 1', function(error, rows, fields){
