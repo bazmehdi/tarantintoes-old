@@ -5,6 +5,7 @@ const app = express();
 
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 app.use(bodyParser.json({type:'application/json'}));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -18,6 +19,16 @@ const con = mysql.createConnection({
     database:'tarantintoes'
 
 });
+
+// Serve static assets if in production
+if(process.env.NODE_ENV === 'production') {
+    // Set static folder
+    app.use(express.static('build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+    });
+}
 
 const port = 5000;
 
