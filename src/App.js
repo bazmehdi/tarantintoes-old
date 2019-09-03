@@ -8,7 +8,7 @@ import Movie from './components/Movie/Movie';
 import Footer from './components/Footer/Footer';
 import Error from './components/Error';
 
-class App extends Component { 
+class App extends Component {
   render() {
     return (
       <Router>
