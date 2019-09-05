@@ -22,7 +22,7 @@ class Home extends Component {
   render() {
     return (
         <div className="home-wrapper">
-          {this.state.shot.map((data, i) =>
+          {this.state.shot.map((data) =>
             <div>
               <div key={data.id} id={data.image_id} onClick={this.fetchData} className="home-box" style={{backgroundImage: 'url(../../../images/' + data.shot_path + ')'}}>
                 <div className="overlay"></div>
