@@ -18,7 +18,7 @@ class Home extends Component {
       .then(res => res.json())
       .then(shot => this.setState({shot}, () => console.log('Data fetched..', shot)));
   }
- kjjhkf
+
   render() {
     return (
         <div className="home-wrapper">
