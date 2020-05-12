@@ -131,8 +131,8 @@
 	.home-wrapper {
         
         .home-box {
-            height: 174px;
-            width: 316px;
+            height: 208px;
+            width: 380px;
             
             .desktop {
                 font-size: 0.45em;
@@ -147,6 +147,26 @@
 
 /*MOBILE3*/
 @media screen and (max-width: 400px) {
+	.home-wrapper {
+        
+        .home-box {
+            height: 192px;
+            width: 350px;
+            
+            .desktop {
+                font-size: 0.1em;
+            }
+        }
+
+        .mobile {
+            display: block;
+            font-size: 0.4em;
+        }
+	}
+}
+
+/*MOBILE4*/
+@media screen and (max-width: 370px) {
 	.home-wrapper {
         
         .home-box {
